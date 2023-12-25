@@ -1,12 +1,10 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
 }
 
-/*$fontes: code;  example variable*/
 html {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
 body {
@@ -26,35 +24,108 @@ body {
   height: 85px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #002864;
+  background-color: rgba(0, 40, 100, 0.38);
 }
 
 li {
   list-style-type: none;
-  /* Убираем маркеры */
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  outline: none;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  margin-left: 120px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.button__img {
+  width: 98px;
+  height: 98px;
+  display: flex;
+}
+
+.button__text {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  border: 1px solid;
+  border-radius: 60px;
+}
+
+#button__text {
+  margin-left: 15px;
+  border: none;
 }
 
 .nav__toggle-button-github {
   width: 260px;
   height: 85px;
   margin-left: 80px;
+  font-family: "Suez One";
+  font-style: bold;
+  font-weight: 900;
+  font-size: 24px;
+  border-radius: 60px;
+  background-color: rgba(0, 40, 100, 0.18);
+  cursor: pointer;
+}
+
+.nav__toggle-button-github:hover .button__text {
+  color: #39acff;
+}
+
+.nav__toggle-button-github:hover .button__img path {
+  fill: #39acff;
 }
 
 .nav__toggle-button-bonus {
-  width: 150px;
+  width: 85px;
   height: 85px;
   margin-right: 80px;
+  font-family: "Sulphur Point";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffffff;
+  color: #ffffff;
+  border: 1px solid;
+  border-radius: 60px;
+  background-color: rgba(0, 40, 100, 0.18);
+  cursor: pointer;
+}
+.nav__toggle-button-bonus:hover {
+  background-color: rgba(0, 102, 255, 0.15);
+  border-color: #39acff;
+}
+
+.nav__toggle-button-bonus:hover #button__bonus__text {
+  color: #39acff;
 }
 
 .nav__item {
   width: 150px;
   text-align: center;
+}
+
+.nav__link {
+  font-family: "Sulphur Point";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffffff;
+}
+.nav__link:hover {
+  color: #39acff;
 }
 
 /*# sourceMappingURL=home-style.css.map */
