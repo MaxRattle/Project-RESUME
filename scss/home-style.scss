@@ -16,7 +16,7 @@ $color-hover-btn-text: #39acff;
 @mixin border-color-btn {
     color: #ffffff;
     border: 1px solid;
-    border-radius: 60px;
+    border-radius: 120px;
 }
 
 html {
@@ -26,8 +26,20 @@ html {
 body {
     @include center-content;
     margin: 0 auto;
-    width: 1440px;
     max-width: 1440px;
+    @media (max-width: 1200px) {
+        width: 1200px;
+    }
+    @media (max-width: 1024px) {
+        width: 1024px;
+    }
+    @media (max-width: 768px) {
+        width: 768px;
+    }
+}
+
+header{
+    width: 100%;
 }
 
 .nav {
@@ -37,6 +49,15 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: $color-dark;
+    @media (max-width: 1200px) {
+        width: 1200px;
+    }
+    @media (max-width: 1024px) {
+        width: 1024px;
+    }
+    @media (max-width: 768px) {
+        width: 768px;
+    }
 }
 
 li {
@@ -66,27 +87,36 @@ button {
     display: flex;
 }
 
+
+
 .button__text {
     display: flex;
     align-items: center;
     @include border-color-btn;
+    height: 98px;
 }
 #button__text {
+    display: flex;
     margin-left: 15px;
+    margin-right: 15px;
     border: none;
-}
-
-.nav__toggle-button-github {
-    width: 260px;
-    height: 85px;
-    margin-left: 80px;
+    height: 98px;
     font-family: "Suez One";
     font-style: bold;
     font-weight: 900;
     font-size: 24px;
+}
+
+.nav__toggle-button-github {
+    max-width: 260px;
+    height: 98px;
+    margin-left: 80px;
     border-radius: 60px;
     background-color: rgba(0, 40, 100, 0.18);
     cursor: pointer;
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 .nav__toggle-button-github:hover .button__text {
     color: $color-hover-btn-text;
@@ -95,9 +125,17 @@ button {
     fill: $color-hover-btn-text;
 }
 
+#button__bonus__text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 198px;
+    max-width:148px;
+    height: 98px;
+}
 .nav__toggle-button-bonus {
-    width: 85px;
-    height: 85px;
+    max-width: 198px;
+    height: 98px;
     margin-right: 80px;
     font-family: "Sulphur Point";
     font-style: normal;
@@ -107,11 +145,14 @@ button {
     @include border-color-btn;
     background-color: rgba(0, 40, 100, 0.18);
     cursor: pointer;
+    @media (max-width: 768px) {
+        display: none;
+    }
     &:hover {
         background-color: $color-hover-btn;
         border-color: #39acff;
     }
-}
+ }
 .nav__toggle-button-bonus:hover #button__bonus__text {
     color: $color-hover-btn-text;
 }
@@ -119,6 +160,12 @@ button {
 .nav__item {
     width: 150px;
     text-align: center;
+    @media (max-width: 1024px) {
+        width: 100px;
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .nav__link {
