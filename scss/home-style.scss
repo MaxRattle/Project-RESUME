@@ -42,13 +42,10 @@ header{
     width: 100%;
 }
 
-.nav {
+.nav__menu{
     @include center-content;
     width: 100%;
-    height: 85px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: $color-dark;
+    max-height: 165px;
     @media (max-width: 1200px) {
         width: 1200px;
     }
@@ -57,6 +54,38 @@ header{
     }
     @media (max-width: 768px) {
         width: 768px;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        max-height: 100%;
+        background-color: #1e1e1e;
+        display: none;
+    }
+}
+
+.nav {
+    @include center-content;
+    width: 100%;
+    padding-top: 33.5px;
+    padding-bottom: 33.5px;
+    background-color: $color-dark;
+    @media (max-width: 1200px) {
+        width: 1200px;
+    }
+    @media (max-width: 1024px) {
+        width: 1024px;
+    }
+    @media (max-width: 768px) {
+        justify-content: flex-end;
+        width: 768px;
+        max-height: 0px;
     }
 }
 
@@ -79,6 +108,29 @@ button {
     align-items: center;
     margin-left: 60px;
     margin-right: 60px;
+    @media (max-width: 1200px) {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 650px) {
+        margin-top: 120px;
+        margin-bottom: 60px;
+    }
+    @media (max-width: 550px) {
+        margin-top: 120px;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 475px) {
+        margin-top: 160px;
+        margin-bottom: 80px;
+    }
 }
 
 .button__img {
@@ -86,7 +138,6 @@ button {
     height: 98px;
     display: flex;
 }
-
 
 
 .button__text {
@@ -115,7 +166,8 @@ button {
     background-color: rgba(0, 40, 100, 0.18);
     cursor: pointer;
     @media (max-width: 768px) {
-        display: none;
+        display: flex;
+        margin-left: 0px;
     }
 }
 .nav__toggle-button-github:hover .button__text {
@@ -146,7 +198,8 @@ button {
     background-color: rgba(0, 40, 100, 0.18);
     cursor: pointer;
     @media (max-width: 768px) {
-        display: none;
+        display: flex;
+        margin-right: 0px;
     }
     &:hover {
         background-color: $color-hover-btn;
@@ -164,7 +217,16 @@ button {
         width: 100px;
     }
     @media (max-width: 768px) {
-        display: none;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 650px) {
+        margin-bottom: 80px;
+    }
+    @media (max-width: 550px) {
+        margin-bottom: 120px;
+    }
+    @media (max-width: 475px) {
+        margin-bottom: 140px;
     }
 }
 
@@ -177,4 +239,66 @@ button {
     &:hover {
         color: $color-hover-header;
     }
+}
+/* burger */
+.burger__icon{
+    @media (min-width: 769px) {
+        display: none;
+    }
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+    margin-right: 40px;
+}
+
+.burger__icon span{
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: #ffffff;
+}
+
+.burger__icon{
+    &::before{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #ffffff;
+        transition: all 0.3s ease 0s;
+        top: 0;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #ffffff;
+        transition: all 0.3s ease 0s;
+        bottom: 0;
+    }
+}
+
+.burger__icon.active span {
+    transform: scale(0);
+}
+
+.burger__icon.active{
+    &::before{
+        top: 50%;
+        transform: rotate(-45deg) translate(0, -50%);
+    }
+    &::after{
+        bottom: 50%;
+        transform: rotate(45deg) translate(0, 50%);
+    }
+}
+
+.open{
+    display: flex !important;
 }
