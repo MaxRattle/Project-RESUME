@@ -1,1 +1,1 @@
-https://maxrattle.github.io/Project-RESUME/
+https://maxrattle.github.io/Project-RESUME/html/home.html
