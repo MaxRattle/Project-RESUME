@@ -53,11 +53,8 @@ header {
 }
 @media (max-width: 768px) {
   .nav__menu {
-    width: 768px;
     flex-direction: column;
     position: fixed;
-    height: 100%;
-    width: 100%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -66,7 +63,9 @@ header {
     overflow-y: auto;
     max-height: 100%;
     background-color: #1e1e1e;
-    display: none;
+    width: 0%;
+    transition-duration: 0.4s;
+    transition-property: width, right;
   }
 }
 
@@ -182,7 +181,6 @@ button {
   max-width: 260px;
   height: 98px;
   margin-left: 80px;
-  border-radius: 60px;
   background-color: rgba(0, 40, 100, 0.18);
   cursor: pointer;
 }
@@ -194,10 +192,12 @@ button {
 }
 
 .nav__toggle-button-github:hover .button__text {
+  transition: all 0.5s linear;
   color: #39acff;
 }
 
 .nav__toggle-button-github:hover .button__img path {
+  transition: all 0.5s linear;
   fill: #39acff;
 }
 
@@ -232,11 +232,13 @@ button {
   }
 }
 .nav__toggle-button-bonus:hover {
+  transition: all 0.5s linear;
   background-color: rgba(0, 102, 255, 0.15);
   border-color: #39acff;
 }
 
 .nav__toggle-button-bonus:hover #button__bonus__text {
+  transition: all 0.5s linear;
   color: #39acff;
 }
 
@@ -276,9 +278,27 @@ button {
   font-weight: 400;
   font-size: 24px;
   color: #ffffff;
+  position: relative;
+  z-index: 50;
 }
 .nav__link:hover {
   color: #39acff;
+  transition: all 0.5s linear;
+}
+.nav__link::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #39acff;
+  transition: 0.5s;
+  left: 50%;
+  transform: translate(-50%);
+}
+.nav__link:hover::after {
+  width: 100%;
 }
 
 /* burger */
@@ -312,7 +332,7 @@ button {
   height: 2px;
   width: 100%;
   background-color: #ffffff;
-  transition: all 0.3s ease 0s;
+  transition: all 0.6s ease 0s;
   top: 0;
 }
 .burger__icon::after {
@@ -321,7 +341,7 @@ button {
   height: 2px;
   width: 100%;
   background-color: #ffffff;
-  transition: all 0.3s ease 0s;
+  transition: all 0.6s ease 0s;
   bottom: 0;
 }
 
@@ -339,7 +359,9 @@ button {
 }
 
 .open {
-  display: flex !important;
+  width: 100%;
+  transition-duration: 0.8s;
+  transition-property: width;
 }
 
 /*# sourceMappingURL=home-style.css.map */
