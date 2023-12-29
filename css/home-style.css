@@ -8,9 +8,7 @@ html {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   margin: 0 auto;
   max-width: 1440px;
 }
@@ -34,6 +32,7 @@ header {
   width: 100%;
 }
 
+/*navigation*/
 .nav__menu {
   display: flex;
   align-items: center;
@@ -301,14 +300,12 @@ button {
   width: 100%;
 }
 
-/* burger */
 .burger__icon {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   position: relative;
   z-index: 50;
-  align-items: center;
-  justify-content: flex-end;
   width: 30px;
   height: 18px;
   margin-right: 40px;
@@ -362,6 +359,75 @@ button {
   width: 100%;
   transition-duration: 0.8s;
   transition-property: width;
+}
+
+main {
+  display: block;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 40, 100, 0.38);
+}
+
+.container {
+  display: flex;
+  border: 1px solid #ffffff;
+  width: 1280px;
+  max-width: 1280px;
+  margin-top: 38px;
+  border-radius: 120px;
+}
+
+.description {
+  margin-top: 80px;
+  margin-left: 132px;
+  margin-right: 43px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+p {
+  text-align: justify;
+}
+
+#desription__header {
+  font-family: "Tahoma";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100px;
+  color: #FFFFFF;
+}
+
+#my-name {
+  font-weight: 800;
+}
+
+#front {
+  font-weight: 800;
+  color: #39acff;
+}
+
+.description__text {
+  font-family: "Tahoma";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin-top: 120px;
+}
+
+#photo {
+  mix-blend-mode: lighten;
+  transform: matrix(0.95, 0, 0, 0.95, 0, 0);
 }
 
 /*# sourceMappingURL=home-style.css.map */

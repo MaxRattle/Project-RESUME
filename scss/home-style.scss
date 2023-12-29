@@ -13,6 +13,10 @@ $color-hover-btn-text: #39acff;
     align-items: center;
     justify-content: center;
 }
+@mixin center-align {
+    display: flex;
+    align-items: center;
+}
 @mixin border-color-btn {
     color: #ffffff;
     border: 1px solid;
@@ -24,7 +28,7 @@ html {
 }
 
 body {
-    @include center-content;
+    display: block;
     margin: 0 auto;
     max-width: 1440px;
     @media (max-width: 1200px) {
@@ -42,6 +46,7 @@ header{
     width: 100%;
 }
 
+/*navigation*/
 .nav__menu{
     @include center-content;
     width: 100%;
@@ -104,8 +109,7 @@ button {
 }
 
 .nav__list {
-    display: flex;
-    align-items: center;
+    @include center-align;
     margin-left: 60px;
     margin-right: 60px;
     @media (max-width: 1200px) {
@@ -141,8 +145,7 @@ button {
 
 
 .button__text {
-    display: flex;
-    align-items: center;
+    @include center-align;
     @include border-color-btn;
     height: 98px;
 }
@@ -162,7 +165,6 @@ button {
     max-width: 260px;
     height: 98px;
     margin-left: 80px;
-    // border-radius: 60px;
     background-color: rgba(0, 40, 100, 0.18);
     cursor: pointer;
     @media (max-width: 768px) {
@@ -180,9 +182,7 @@ button {
 }
 
 #button__bonus__text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center-content;
     width: 198px;
     max-width:148px;
     height: 98px;
@@ -262,17 +262,15 @@ button {
         width: 100%;
     }
 }
-/* burger */
+//burger
 .burger__icon{
     @media (min-width: 769px) {
         display: none;
     }
-    display: flex;
+    @include center-align;
     justify-content: flex-end;
     position: relative;
     z-index: 50;
-    align-items: center;
-    justify-content: flex-end;
     width: 30px;
     height: 18px;
     margin-right: 40px;
@@ -326,4 +324,74 @@ button {
     width: 100%;
     transition-duration: .8s;
     transition-property: width;
+}
+
+//main
+main{
+    display: block;
+}
+
+section{
+    @include center-content;
+    background-color: $color-dark;
+}
+
+.container{
+    display: flex;
+    border: 1px solid #ffffff;
+    width: 1280px;
+    max-width: 1280px;
+    margin-top: 38px;
+    border-radius: 120px;
+}
+
+
+.description{
+    margin-top: 80px;
+    margin-left: 132px;
+    margin-right: 43px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+}
+
+p {
+    text-align: justify;
+}
+
+#desription__header{
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 100px;
+    color: #FFFFFF;
+}
+
+#my-name{
+    font-weight: 800;
+}
+
+#front{
+    font-weight: 800;
+    color: $color-hover-btn-text;
+}
+
+.description__text{
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin-top: 120px;
+}
+
+
+#photo{
+    mix-blend-mode: lighten;
+    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
 }
