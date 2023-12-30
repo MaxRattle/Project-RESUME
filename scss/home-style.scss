@@ -8,6 +8,7 @@ $color-light-dark: #0066ff;
 $color-hover-header: #39acff;
 $color-hover-btn: rgba(0, 102, 255, 0.15);
 $color-hover-btn-text: #39acff;
+$color-about:rgba(0, 102, 255, 0.28);
 @mixin center-content {
     display: flex;
     align-items: center;
@@ -336,7 +337,8 @@ section{
     background-color: $color-dark;
 }
 
-.container{
+//description
+.container__description{
     display: flex;
     border: 1px solid #ffffff;
     width: 1280px;
@@ -351,7 +353,6 @@ section{
         width: 688px;
     }
 }
-
 
 .description{
     margin-top: 80px;
@@ -370,11 +371,11 @@ section{
     
 }
 
-h1 {
-    margin: 0;
-    padding: 0;
-    text-align: justify;
-}
+// h1 {
+//     margin: 0;
+//     padding: 0;
+//     text-align: justify;
+// }
 
 p {
     text-align: justify;
@@ -433,4 +434,78 @@ p {
     @media (max-width: 768px) {
         max-width: 440px;
     }
+}
+
+//about
+.container{
+    display: block;
+    width: 1280px;
+    max-width: 1280px;
+    margin-top: 38px;
+    margin-bottom: 78px;
+    @media (max-width: 1200px) {
+        max-width: 864px;
+    }
+    @media (max-width: 768px) {
+        width: 688px;
+    }
+}
+
+#container__about{
+    background-color: $color-about;
+}
+
+.container__header{
+    margin-top: 203px;
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.header__color{
+    color: #39ACFF;
+    margin-right: 15px;
+}
+
+#container__photo{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+.container__photo__img{
+    border: 1px solid #FFFFFF;
+    border-radius: 300px;
+    mix-blend-mode: lighten;
+    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+
+}
+
+.container__header2{
+    margin-top: 40px;
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.container__p__about{
+    margin-top: 40px;
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-indent: 30px;
+    display: flex;
+    align-items: flex-start;
+    color: #FFFFFF;
 }
