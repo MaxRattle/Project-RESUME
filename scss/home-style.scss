@@ -80,7 +80,7 @@ header{
     width: 100%;
     padding-top: 33.5px;
     padding-bottom: 33.5px;
-    background-color: $color-dark;
+    background-color: rgba(0, 40, 100, 0.48);
     @media (max-width: 1200px) {
         width: 1200px;
     }
@@ -342,7 +342,14 @@ section{
     width: 1280px;
     max-width: 1280px;
     margin-top: 38px;
+    margin-bottom: 78px;
     border-radius: 120px;
+    @media (max-width: 1200px) {
+        max-width: 864px;
+    }
+    @media (max-width: 768px) {
+        width: 688px;
+    }
 }
 
 
@@ -350,6 +357,17 @@ section{
     margin-top: 80px;
     margin-left: 132px;
     margin-right: 43px;
+    @media (max-width: 1200px) {
+        max-width: 305px;
+        margin-left: 132px;
+        margin-right: 0px;
+    }
+    @media (max-width: 769px) {
+        max-width: 205px;
+        margin-left: 65px;
+        margin-right: 0px;
+    }
+    
 }
 
 h1 {
@@ -369,6 +387,11 @@ p {
     font-size: 48px;
     line-height: 100px;
     color: #FFFFFF;
+    @media (max-width: 1200px) {
+        text-align: left;
+        font-size: 42px;
+        line-height: 56px;
+    }
 }
 
 #my-name{
@@ -378,6 +401,12 @@ p {
 #front{
     font-weight: 800;
     color: $color-hover-btn-text;
+    @media (max-width: 1200px) {
+        text-align: left;
+        line-height: 56px;
+        display: block;
+        margin-top: 30px;
+    }
 }
 
 .description__text{
@@ -388,10 +417,20 @@ p {
     line-height: 32px;
     color: #FFFFFF;
     margin-top: 120px;
+    @media (max-width: 1200px) {
+        text-align: left;
+        font-size: 26px;
+        line-height: 32px;
+        display: block;
+        margin-top: 30px;
+    }
 }
 
 
-#photo{
+#description__photo{
     mix-blend-mode: lighten;
     transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+    @media (max-width: 768px) {
+        max-width: 440px;
+    }
 }
